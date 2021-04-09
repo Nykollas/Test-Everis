@@ -1,0 +1,35 @@
+.THIS {
+    background-color:white;
+    
+}
+.THIS.main-container {
+    border-radius:4px;
+    display:flex;
+    flex-direction:column;
+    box-shadow:1px 1px 3px 1px #BBB;
+    padding:1rem;
+    
+}
+.THIS .slds-form-element{
+    padding-bottom:1rem;
+}
+
+.THIS.button-container{
+	background-color:white;
+    display:flex;
+    flex-direction:row;
+   	align-items:center;
+    margin-top:1rem;
+    justify-content:center;
+}
+
+.THIS .slds-button{
+	background-color:blue;
+    color:white;
+    width:45%;
+   	text-align:center;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    margin-bottom:12px;
+}

@@ -1,0 +1,27 @@
+<aura:component  implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"  controller="AccountNumberCustomInController" >
+    	<aura:attribute name="accId" type="String" default="{!v.recordId}" access="global" />
+        <aura:attribute name="success" type="Boolean" default="false" access="global" />
+        <aura:attribute name="error" type="Boolean" default="false" access="global" />
+    <div class='main-container'>
+        <aura:renderIf isTrue="{!v.success}">
+		    <ui:message title="Sucesso" severity="confirm" closable="false">
+				Conta atualizada com sucesso !
+			</ui:message>    		
+      	</aura:renderIf> 
+    	<aura:renderIf isTrue="{!v.error}">
+            <ui:message title="Erro" severity="error" closable="false">
+                Houve um erro verifique se os dados estão corretos
+            </ui:message>
+        </aura:renderIf> 
+			<lightning:input  name="nomeconta" aura:id="nomeconta" label="Nome da conta" placeholder="Preencha o nome da conta" required="true"/>
+        	<lightning:input  name="accnum" aura:id="accnum" label="Número do cliente" placeholder="Preencha o número do cliente" required="true" onchange='{!c.onChange}'/>
+            <lightning:select name="tipodaconta" aura:id="tipodaconta" label="Tipo da conta" required="true">
+                <option value="default">Escolha uma opção ...</option>
+                <option value="CPF">CPF</option>
+                <option value="CNPJ">CNPJ</option>
+            </lightning:select>
+    	<div class='button-container'>
+    		<lightning:button variant="base" label="Salvar" title="Salvar" onclick="{! c.handleClick }"/>
+        </div>
+        </div>  
+</aura:component>
